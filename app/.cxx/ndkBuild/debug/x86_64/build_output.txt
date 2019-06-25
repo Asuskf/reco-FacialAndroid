@@ -1,0 +1,11 @@
+Android NDK: OpenCV: You should ignore warning about 'non-system libraries in linker flags' and 'opencv_java' library.    
+Android NDK:         'OPENCV_INSTALL_MODULES:=on' can be used to build APK with included OpenCV binaries    
+rm -f /home/asus/proyectos/reco-FacialAndroid/app/build/intermediates/ndkBuild/debug/lib/x86_64/*
+rm -f /home/asus/proyectos/reco-FacialAndroid/app/build/intermediates/ndkBuild/debug/lib/x86_64/gdbserver
+rm -f /home/asus/proyectos/reco-FacialAndroid/app/build/intermediates/ndkBuild/debug/lib/x86_64/gdb.setup
+mkdir -p /home/asus/proyectos/reco-FacialAndroid/app/build/intermediates/ndkBuild/debug/lib/x86_64
+echo [x86_64] "Gdbserver      ": "[x86_64-linux-android] /home/asus/proyectos/reco-FacialAndroid/app/build/intermediates/ndkBuild/debug/lib/x86_64/gdbserver"
+install -p /home/asus/Android/Sdk/ndk/20.0.5594570/prebuilt/android-x86_64/gdbserver/gdbserver /home/asus/proyectos/reco-FacialAndroid/app/build/intermediates/ndkBuild/debug/lib/x86_64/gdbserver
+echo [x86_64] "Gdbsetup       ": "/home/asus/proyectos/reco-FacialAndroid/app/build/intermediates/ndkBuild/debug/lib/x86_64/gdb.setup"
+echo "set solib-search-path /home/asus/proyectos/reco-FacialAndroid/app/build/intermediates/ndkBuild/debug/obj/local/x86_64" > /home/asus/proyectos/reco-FacialAndroid/app/build/intermediates/ndkBuild/debug/lib/x86_64/gdb.setup
+echo "directory /home/asus/Android/Sdk/ndk/20.0.5594570/toolchains/llvm/prebuilt/linux-x86_64/sysroot /home/asus/Android/Sdk/ndk/20.0.5594570/sources/cxx-stl/system" >> /home/asus/proyectos/reco-FacialAndroid/app/build/intermediates/ndkBuild/debug/lib/x86_64/gdb.setup
