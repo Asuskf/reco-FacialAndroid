@@ -7,6 +7,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+
+import com.mongodb.MongoClient;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
+
 import org.opencv.android.OpenCVLoader;
 
 public class MainActivity extends AppCompatActivity {
@@ -25,6 +30,9 @@ public class MainActivity extends AppCompatActivity {
                 Intent goOpenCv = new Intent(MainActivity.this, recoFacial.class);
                 startActivity(goOpenCv);
             }
+            MongoClient mongoClient = new MongoClient("192.168.122.1",27017);
+            MongoDatabase database = mongoClient.getDatabase("test");
+            MongoCollection coll = database.getCollection("myTestCollection");
         });
 
     }
