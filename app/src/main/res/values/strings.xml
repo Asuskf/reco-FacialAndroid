@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">recoFacial</string>
+    <string name="btn_initialRecoFacial">Reconocimiento de resotros</string>
 </resources>
